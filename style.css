@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap');
+
+:root  {
+    --bg-color: #C96567;
+    --prim-color:#314455;
+    --sec-color: white; 
+    --acc-color: #97AABD;
+
+/*  extra kleuren evt     
+    #644E5B
+    #9E5A63 
+*/
+    
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Open Sans', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0; 
+    font-size: 1rem;
+}
+
+#containerInfoJobDag{
+    min-height: 100vh;
+}
+
+.flex-info {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 63.5%;
+    margin: 0 auto 1em;
+    color: white;
+}
+
+.flex-info h1{
+    width: 35%;
+    font-size: 4em;
+    text-align: end;
+    overflow: hidden;
+    line-height: 1.2em;
+}
+
+.flex-info2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 35%;
+}
+
+#countdown{
+    display: flex;
+    justify-content: space-between;
+    font-size: 2.5em;    
+}
+
+#day, #hr, #min, #sec {
+    font-size: 1em;
+    font-weight: 600;
+}
+
+#day::after, #hr::after, #min::after, #sec::after {
+    display: block;
+    font-size: 1rem;
+}
+
+#day::after{ 
+    content:'days';
+}
+#hr::after{ 
+    content:'hours';
+}
+#min::after{ 
+    content:'minutes';
+}
+#sec::after{ 
+    content:'seconds';
+}
+
+#redirectToSignUp {
+    display: inline-block;
+    font-weight: 800;
+    text-align: center;
+    width: fit-content;
+    padding: .75em 1em;
+    margin: 0 1em;
+    background-color: var(--acc-color);
+    transition: transform 250ms ease-in-out, 
+                box-shadow 250ms ease-in-out,
+                background-color 250ms ease-in-out;      
+}
+
+#redirectToSignUp:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+    background-color: var(--prim-color);
+}
+
+/* #redirectToSignUp:after {
+    content: "\f100";
+    font-family: "Font Awesome 5 Free";
+} */
+
+.info-text {
+    width: 63.5%;
+    margin: 0 auto;
+    padding: 1em 2em;
+    color: #314455;
+    background-color: white;
+} 
+
+.info-text h2 {
+    padding: .5em 0;
+    font-size: 2em;
+}
+
+.center {
+    text-align: center;
+    font-size: 500px;
+}
+
+.btn-container {
+    align-self: flex-start;
+    display: flex;
+    justify-content: center;
+}
+
+.flex-info2 i {
+    font-size: 3em;
+    
+}
