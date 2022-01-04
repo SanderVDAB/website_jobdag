@@ -33,7 +33,7 @@ body {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-    width: 63.5%;
+    width: 90%;
     margin: 0 auto 1em;
     color: white;
 }
@@ -108,7 +108,7 @@ body {
 } */
 
 .info-text {
-    width: 63.5%;
+    width: 80%;
     margin: 0 auto;
     padding: 1em 2em;
     color: #314455;
@@ -136,10 +136,19 @@ body {
     font-size: 3em;
 }
 
-#codeerbadge {
+#badgescontainer {
     width: 80%;
     margin: 0 auto;
-    background-color: hotpink;
+    background-color: #314455;
+}
+
+#badgescontainer h3{
+    text-align: center;
+    color: white;
+    font-size: 30px;
+}
+
+#codeerbadge {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -151,5 +160,30 @@ body {
     width: 25%;
     height: 25%;
     display: flex;
+    flex-direction: column;
     margin: 3%;
+}
+
+.badge img{
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#mysql, #ionic, #angular{
+    opacity: 0.1;
+}
+
+.uitleg{
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    z-index: 2;
+    color: var(--prim-color);
+    background-color: #314455;
+    border: 2px solid white;
+    color: white;
+    padding: 5%;
+    margin: 5%;
+    /* margin-top: -100%; */
 }

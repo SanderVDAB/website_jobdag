@@ -6,7 +6,8 @@ var hrDiv = document.getElementById("hr");
 var minDiv = document.getElementById("min");
 var secDiv = document.getElementById("sec");
 // var = document.getElementById("");
-
+//SW
+var badge = document.getElementsByClassName("badge");
 
 
 
@@ -43,3 +44,16 @@ function calcDifference() {
 setInterval(() => {
     calcDifference();
 }, 1000);
+
+//SW
+function showText(img) {
+    img.style.opacity = "0.1"
+    img.nextSibling.style.visibility = "visible"
+    // alert(`${}`)
+}
+
+
+function hideText(img) {
+    img.style.opacity = "1"
+    img.nextSibling.style.visibility = "hidden"
+}
