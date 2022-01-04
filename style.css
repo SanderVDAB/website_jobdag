@@ -113,6 +113,7 @@ body {
     padding: 1em 2em;
     color: #314455;
     background-color: white;
+    border: #314455 1px solid;
 } 
 
 .info-text h2 {
@@ -133,5 +134,22 @@ body {
 
 .flex-info2 i {
     font-size: 3em;
-    
+}
+
+#codeerbadge {
+    width: 80%;
+    margin: 0 auto;
+    background-color: hotpink;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1em;
+}
+
+.badge{
+    width: 25%;
+    height: 25%;
+    display: flex;
+    margin: 3%;
 }
