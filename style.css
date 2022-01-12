@@ -33,7 +33,7 @@ body {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-    width: 90%;
+    width: 70%;
     margin: 0 auto 1em;
     color: white;
 }
@@ -108,7 +108,7 @@ body {
 } */
 
 .info-text {
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
     padding: 1em 2em;
     color: #314455;
@@ -136,16 +136,70 @@ body {
     font-size: 3em;
 }
 
-#badgescontainer {
-    width: 80%;
+.info-pupils{
+    width: 100%;
     margin: 0 auto;
-    background-color: #314455;
+    padding: 1em 2em;
+    color: #314455;
+    background-color: var(--prim-color);
+    border: #314455 1px solid;
+    color: var(--sec-color)
+}
+
+.info-pupils h2 {
+    padding: .5em 0;
+    font-size: 2em;
+}
+
+#intro-pupils{
+    width: 70%;
+    margin: 0 auto;
+}
+
+#pupil-carousel{
+    width: 100%;
+}
+
+#pupil-carousel .pupil{
+    width: 25%;
+    margin: 0 auto;
+    margin-bottom: 1%;
+}
+
+#pupils{
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.pupil{
+    width: 30%;
+    /* padding: 1%; */
+    text-align: center;
+}
+
+.pupil img{
+    width: 100%;
+}
+
+.pupil p{
+    margin-top: -10%;
+    color: var(--prim-color);
+}
+
+#badgescontainer {
+    width: 70%;
+    margin: 0 auto;
+    background-color: #445564;
 }
 
 #badgescontainer h3{
     text-align: center;
     color: white;
     font-size: 30px;
+    margin-top: 30px;
 }
 
 #codeerbadge {
@@ -158,16 +212,20 @@ body {
 
 .badge{
     width: 25%;
-    height: 25%;
+    height: 30%;
     display: flex;
     flex-direction: column;
-    margin: 3%;
+    margin: 1%;
+    position: relative;
+    top: 2%
 }
 
 .badge img{
     width: 100%;
     height: 100%;
     z-index: 1;
+    filter: drop-shadow(0px 0px 10px #000000);
+    padding: 10px;
 }
 
 #mysql, #ionic, #angular{
@@ -175,15 +233,16 @@ body {
 }
 
 .uitleg{
+    text-align: center;
     width: 100%;
-    height: 100%;
+    height: max-content;
     visibility: hidden;
     z-index: 2;
     color: var(--prim-color);
-    background-color: #314455;
+    background-color: #445564;
     border: 2px solid white;
     color: white;
     padding: 5%;
     margin: 5%;
-    /* margin-top: -100%; */
+    margin-top: -75%;
 }

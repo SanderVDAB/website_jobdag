@@ -7,7 +7,9 @@ var minDiv = document.getElementById("min");
 var secDiv = document.getElementById("sec");
 // var = document.getElementById("");
 //SW
-var badge = document.getElementsByClassName("badge");
+var carousel_HTML = document.getElementById("pupil-carousel")
+var pupil = document.getElementsByClassName("pupil");
+var nummer_carousel = 0;
 
 
 
@@ -47,13 +49,34 @@ setInterval(() => {
 
 //SW
 function showText(img) {
-    img.style.opacity = "0.1"
-    img.nextSibling.style.visibility = "visible"
+    img.children[0].style.opacity = "0.1"
+    img.children[1].style.visibility = "visible"
     // alert(`${}`)
 }
 
-
 function hideText(img) {
-    img.style.opacity = "1"
-    img.nextSibling.style.visibility = "hidden"
+    img.children[0].style.opacity = "1"
+    img.children[1].style.visibility = "hidden"
 }
+
+function carousel(element) {
+    console.log(element.nextElementSibling.children[0].outerHTML)
+
+    var countdownAan = () => {
+        element.innerHTML = element.nextElementSibling.children[nummer_carousel % 3].outerHTML
+        nummer_carousel++
+        // if (nummer_carousel < ) {
+        //     pauzeknoppen(aan, "||", "green");
+        //     countdown();
+        // } else {
+        //     pauzeknoppen(aan, "|>", "");
+        //     clearInterval(zetaan)
+        // }
+    }
+    // var zetaan = 
+    setInterval(countdownAan, 1000);
+}
+
+
+
+window.addEventListener("load", carousel(carousel_HTML))
