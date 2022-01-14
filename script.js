@@ -6,7 +6,10 @@ var hrDiv = document.getElementById("hr");
 var minDiv = document.getElementById("min");
 var secDiv = document.getElementById("sec");
 // var = document.getElementById("");
-
+//SW
+var carousel_HTML = document.getElementById("pupil-carousel")
+var pupil = document.getElementsByClassName("pupil");
+var nummer_carousel = 0;
 
 
 
@@ -43,3 +46,37 @@ function calcDifference() {
 setInterval(() => {
     calcDifference();
 }, 1000);
+
+//SW
+function showText(img) {
+    img.children[0].style.opacity = "0.1"
+    img.children[1].style.visibility = "visible"
+    // alert(`${}`)
+}
+
+function hideText(img) {
+    img.children[0].style.opacity = "1"
+    img.children[1].style.visibility = "hidden"
+}
+
+function carousel(element) {
+    console.log(element.nextElementSibling.children[0].outerHTML)
+
+    var countdownAan = () => {
+        element.innerHTML = element.nextElementSibling.children[nummer_carousel % 3].outerHTML
+        nummer_carousel++
+        // if (nummer_carousel < ) {
+        //     pauzeknoppen(aan, "||", "green");
+        //     countdown();
+        // } else {
+        //     pauzeknoppen(aan, "|>", "");
+        //     clearInterval(zetaan)
+        // }
+    }
+    // var zetaan = 
+    setInterval(countdownAan, 1000);
+}
+
+
+
+window.addEventListener("load", carousel(carousel_HTML))
