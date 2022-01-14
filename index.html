@@ -10,9 +10,21 @@
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navbar.css">
 </head>
 
 <body>
+    <nav id="navbarContainer">
+        <div id="navDiv">
+            <a id="logo" href="#home"><img  src="/img/logo.png" alt="logo"></a>
+            <a id="hamburger" href="javascript:void(0);" class="icon" onclick="navMenue()">
+                <i class="fa fa-bars fa-2x"></i></a>
+            <a class="navLi" href="#jobdag">Jobdag</a>
+            <a class="navLi" href="#cursisten">Cursisten</a>
+            <a class="navLi" href="#opleiding">Opleiding</a>        
+
+        </div>  
+    </nav>  
 
     <div id="containerInfoJobDag">
         <div class="flex-info">

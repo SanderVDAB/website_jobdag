@@ -11,7 +11,17 @@ var carousel_HTML = document.getElementById("pupil-carousel")
 var pupil = document.getElementsByClassName("pupil");
 var nummer_carousel = 0;
 
+function navMenue() {
+    var x = document.getElementsByClassName("navLi");
+    for (var i = 0; i < x.length; i++) {
+        if (x[i].style.display === "block") {
+            x[i].style.display = "none";
+        } else {
+            x[i].style.display = "block";
+        }
+    }
 
+}
 
 function getCurrentDateTime() {
     var time = new Date().getTime() / 1000;     //current in unix
