@@ -41,7 +41,7 @@ body {
         transition: top 1s ease;
     }
     
-    .navLi {
+    .navLi, .navLiHam {
         display: none;
         text-decoration: none;
         color: var(--sec-color);
@@ -52,6 +52,10 @@ body {
 
     .navLi:hover {
         background-color: var(--acc-color); 
+    }
+
+    .navLiHam {
+        display: none;
     }
 
     #hamburger {
@@ -91,7 +95,7 @@ body {
         align-self: flex-start;
     } 
 
-    .navLi {
+    .navLi, .navLiHam {
         color: var(--sec-color);
         padding: 14px 16px;
         height: 100%;
@@ -104,6 +108,14 @@ body {
     .navLi:hover {
         background-color: var(--acc-color);
     
+    }
+
+    .navLi{
+        display: block;
+    }
+
+    .navLiHam {
+        display: none;
     }
 
     #hamburger {

@@ -12,15 +12,19 @@ var pupil = document.getElementsByClassName("pupil");
 var nummer_carousel = 0;
 
 function navMenue() {
-    var x = document.getElementsByClassName("navLi");
-    for (var i = 0; i < x.length; i++) {
-        if (x[i].style.display === "block") {
-            x[i].style.display = "none";
-        } else {
-            x[i].style.display = "block";
-        }
+    // let x = document.getElementsByClassName("navLi");
+    let x = document.getElementsByClassName("navLiHam");
+    for (let i = 0; i < x.length; i++) {
+        (x[i].style.display === "block" ? x[i].style.display = "none" : x[i].style.display = "block");
     }
+}
 
+function clickMenuItem() {
+    // let x = document.getElementsByClassName("navLi");
+    let x = document.getElementsByClassName("navLiHam");
+    for (let i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
 }
 
 function getCurrentDateTime() {

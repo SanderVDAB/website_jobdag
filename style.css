@@ -26,9 +26,9 @@ body {
     font-size: 1rem;
 }
 
- section {
+ /* section {
      min-height: 100vh;
- }
+ } */
 
 /* .scroll-section {
     min-height: 100vh;
@@ -48,31 +48,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 100vh;
-}
-
-.flex-info {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    width: 70%;
-    margin: 3em auto 1em;
-    color: white;
-}
-
-.flex-info h1{
-    width: 35%;
-    font-size: 4em;
-    text-align: end;
-    overflow: hidden;
-    line-height: 1.2em;
-}
-
-.flex-info2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 35%;
+    /* min-height: 100vh; */
 }
 
 #countdown{
@@ -91,25 +67,13 @@ body {
     font-size: 1rem;
 }
 
-#day::after{ 
-    content:'days';
-}
-#hr::after{ 
-    content:'hours';
-}
-#min::after{ 
-    content:'minutes';
-}
-#sec::after{ 
-    content:'seconds';
-}
-
 #redirectToSignUp {
     display: inline-block;
     font-weight: 800;
     text-align: center;
     color: white;
     width: fit-content;
+    min-width: 100px;
     padding: .75em 1em;
     margin: 0 1em;
     border-radius: .2em;
@@ -133,9 +97,9 @@ body {
 } */
 
 .info-text {
-    width: 70%;
+    width: 90%;
     margin: 0 auto;
-    padding: 3em 3em 5em;
+    padding: 1.5em 2em 2em;
     color: #314455;
     background-color: white;
     border-radius: .2em .2em 0 0;
@@ -150,12 +114,6 @@ body {
 .center {
     text-align: center;
     font-size: 500px;
-}
-
-.btn-container {
-    align-self: flex-start;
-    display: flex;
-    justify-content: center;
 }
 
 .flex-info2 i {
@@ -189,7 +147,6 @@ body {
 #pupil-carousel .pupil{
     width: 25%;
     margin: 0 auto;
-    margin-bottom: 1%;
 }
 
 #pupils{
@@ -202,22 +159,24 @@ body {
 
 .pupil{
     width: 30%;
-    /* padding: 1%; */
     text-align: center;
+    margin: 0 0 2em;
 }
 
 .pupil img{
     width: 100%;
 }
 
-.pupil p{
+/* .pupil p{
     margin-top: -10%;
     color: var(--prim-color);
-}
+} */
+
+
 
 #badgescontainer {
-    width: 70%;
-    margin: 2em auto 0 ;
+    /* width: 70%; */
+    /* margin: 2em auto 0 ; */
     background-color: #445564;
     padding: 1em 0;
 }
@@ -281,4 +240,222 @@ body {
 
 #opleiding {
     margin-bottom: 10em;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 650px) {
+    .flex-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 70%;
+        margin: 5em auto 1em;
+        color: white;
+    }
+
+    .flex-info h1{
+        font-size: 3em;
+        text-align: right;
+        /* overflow: hidden; */
+        line-height: 1.2em;
+    }
+    
+    .flex-info2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    #countdown {
+        display: none;
+    }
+
+    /* #day::after{ 
+        content:'day';
+    }
+    #hr::after{ 
+        content:'hr';
+    }
+    #min::after{ 
+        content:'min';
+    }
+    #sec::after{ 
+        content:'sec';
+    } */
+
+
+    .btn-container {
+        align-self: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    #pupil-carousel .pupil{
+        width: 30%;
+        min-width: 250px;
+        margin-bottom: 2em;
+
+    }
+    
+    .uitleg {
+        display: none;
+    }
+
+    .badge {
+        text-align: center;
+        color: white;
+    }
+
+    #html::after {
+    content: "html";
+    }
+
+    #css::after {
+        content: "css";
+    }
+
+    #js::after {
+        content: "Javascript";
+    }
+
+    #mysql::after {
+    content: "MySQL";
+    }
+
+    #ionic::after {
+        content: "Ionic";
+    }
+
+    #angular::after {
+        content: "Angular";
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 650px) {
+    .flex-info {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        width: 70%;
+        margin: 3em auto 1em;
+        color: white;
+    }
+
+    .flex-info h1{
+        width: 50%;
+        font-size: 3em;
+        /* align-self:; */
+        text-align: right;
+        overflow: hidden;
+        line-height: 1.2em;
+    }
+    
+    .flex-info2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 35%;
+    }
+
+    #countdown div {
+        padding: 0 .2em;
+    }
+
+    #day::after{ 
+        content:'day';
+    }
+    #hr::after{ 
+        content:'hr';
+    }
+    #min::after{ 
+        content:'min';
+    }
+    #sec::after{ 
+        content:'sec';
+    }
+
+
+
+    .btn-container {
+        align-self: flex-start;
+        display: flex;
+        justify-content: center;
+    }
+
+    #pupil-carousel .pupil{
+        width: 30%;
+        min-width: 300px;
+        margin-bottom: 2em;
+
+    }
+
+}
+
+@media only screen and (min-width: 1300px) {
+    .flex-info h1{
+        width: 35%;
+        font-size: 4em;
+        /* align-self:; */
+        text-align: right;
+        overflow: hidden;
+        line-height: 1.2em;
+    }
+
+    #day::after{ 
+        content:'days';
+    }
+    #hr::after{ 
+        content:'hours';
+    }
+    #min::after{ 
+        content:'minutes';
+    }
+    #sec::after{ 
+        content:'seconds';
+    }
+
+    .info-text {
+        width: 70%;
+        margin: 0 auto;
+        padding: 3em 3em 5em;
+        color: #314455;
+        background-color: white;
+        border-radius: .2em .2em 0 0;
+        /* border: #314455 1px solid; */
+    } 
+
+    #pupil-carousel{
+        width: 70%;
+        margin: 0 auto;
+        margin-bottom: 2em;
+    }
+    
+    #pupil-carousel .pupil{
+        width: 30%;
+    }
+    
+    #pupils{
+        width: 70%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .pupil{
+        width: 30%;
+        /* padding: 1%; */
+        text-align: center;
+        margin: 0 0 2em;
+    }
+    
+    .pupil img{
+        width: 100%;
+    }
+    
+    .pupil p{
+        margin-top: -10%;
+        color: var(--prim-color);
+    }
 }
