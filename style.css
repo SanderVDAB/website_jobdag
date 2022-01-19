@@ -37,10 +37,10 @@ body {
 }
 
 .scroll-container {
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
     scroll-padding-top: 49.6px;
     overflow-y: auto;
-    height: 100vh;
+    height: 90vh;
 } */
 
 
@@ -48,7 +48,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* max-height: calc(100vh - 200px); */
+    min-height: 100vh;
 }
 
 .flex-info {
@@ -133,7 +133,7 @@ body {
 .info-text {
     width: 70%;
     margin: 0 auto;
-    padding: 2em 3em;
+    padding: 3em 3em 5em;
     color: #314455;
     background-color: white;
     border-radius: .2em .2em 0 0;
@@ -165,7 +165,8 @@ body {
     margin: 0 auto;
     color: #314455;
     background-color: var(--prim-color);
-    color: var(--sec-color)
+    color: var(--sec-color);
+    padding: 1em 0 2em;
 }
 
 .info-pupils h2 {
@@ -214,8 +215,9 @@ body {
 
 #badgescontainer {
     width: 70%;
-    margin: 0 auto;
+    margin: 2em auto 0 ;
     background-color: #445564;
+    padding: 1em 0;
 }
 
 #badgescontainer h3{
@@ -273,4 +275,8 @@ body {
     padding: 5%;
     margin: 5%;
     margin-top: -100%;
+}
+
+#opleiding {
+    margin-bottom: 10em;
 }
