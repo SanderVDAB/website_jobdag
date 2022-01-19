@@ -61,7 +61,6 @@ setInterval(() => {
 function showText(img) {
     img.children[0].style.opacity = "0.1"
     img.children[1].style.visibility = "visible"
-    // alert(`${}`)
 }
 
 function hideText(img) {
@@ -75,15 +74,7 @@ function carousel(element) {
     var countdownAan = () => {
         element.innerHTML = element.nextElementSibling.children[nummer_carousel % 3].outerHTML
         nummer_carousel++
-        // if (nummer_carousel < ) {
-        //     pauzeknoppen(aan, "||", "green");
-        //     countdown();
-        // } else {
-        //     pauzeknoppen(aan, "|>", "");
-        //     clearInterval(zetaan)
-        // }
     }
-    // var zetaan = 
     setInterval(countdownAan, 1000);
 }
 
