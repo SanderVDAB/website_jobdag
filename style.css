@@ -108,6 +108,7 @@ body {
     display: inline-block;
     font-weight: 800;
     text-align: center;
+    color: white;
     width: fit-content;
     padding: .75em 1em;
     margin: 0 1em;
@@ -123,6 +124,7 @@ body {
     transform: scale(1.1);
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
     background-color: var(--acc-color);
+    color: white;
 }
 
 /* #redirectToSignUp:after {
