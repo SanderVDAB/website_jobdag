@@ -31,12 +31,14 @@ body {
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     #navbarContainer {
-        position: sticky;
-        position: relative;
+        position: fixed;
+        /* position: relative; */
+        
         top: 0;
         width: 100%;
         margin-top: 0;
         background-color: var(--prim-color);
+        transition: top 1s ease;
     }
     
     .navLi {
@@ -45,6 +47,7 @@ body {
         color: var(--sec-color);
         padding: 14px;
         width: 100%;
+        text-align: right;
     }
 
     .navLi:hover {
@@ -52,7 +55,7 @@ body {
     }
 
     #hamburger {
-        color: var(--bg-color);
+        color: var(--sec-color);
         padding: 14px 16px;
         position: absolute;
         right: 10px;
@@ -74,6 +77,8 @@ body {
         align-items: center;
         margin-top: 0;
         background-color: var(--prim-color);
+        transition: top .3s ease;
+        box-shadow: 3px 0 10px rgba(0, 0, 0, 0.5);
     }
 
     #navDiv {
@@ -92,10 +97,12 @@ body {
         height: 100%;
         text-decoration: none;
         align-self: center;
+        border-radius: 0.2em;
+        transition: background-color 250ms ease-in-out;
       }
     
     .navLi:hover {
-        background-color: var(--bg-color);
+        background-color: var(--acc-color);
     
     }
 
