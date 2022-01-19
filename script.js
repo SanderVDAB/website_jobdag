@@ -58,14 +58,14 @@ setInterval(() => {
 }, 1000);
 
 //SW
-function showText(img) {
-    img.children[0].style.opacity = "0.1"
-    img.children[1].style.visibility = "visible"
+function showText(badge) {
+    badge.children[0].style.opacity = "0.1"
+    badge.children[1].style.visibility = "visible"
 }
 
-function hideText(img) {
-    img.children[0].style.opacity = "1"
-    img.children[1].style.visibility = "hidden"
+function hideText(badge) {
+    badge.children[0].style.opacity = "1"
+    badge.children[1].style.visibility = "hidden"
 }
 
 function carousel(element) {
@@ -75,9 +75,21 @@ function carousel(element) {
         element.innerHTML = element.nextElementSibling.children[nummer_carousel % 3].outerHTML
         nummer_carousel++
     }
-    setInterval(countdownAan, 1000);
+    // var zetaan = 
+    setInterval(countdownAan, 3000);
 }
 
 
 
 window.addEventListener("load", carousel(carousel_HTML))
+
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function () {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+        document.getElementById("navbarContainer").style.top = "0";
+    } else {
+        document.getElementById("navbarContainer").style.top = "-70.8px";
+    }
+    prevScrollpos = currentScrollPos;
+}
