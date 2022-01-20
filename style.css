@@ -44,6 +44,19 @@ body {
 } */
 
 
+#navbarContainer {
+    top: 0;
+    width: 100%;
+    margin-top: 0;
+    background-color: var(--prim-color);
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.navLi:hover {
+    background-color: var(--acc-color); 
+}
+
+
 #containerInfoJobDag{
     display: flex;
     flex-direction: column;
@@ -176,7 +189,8 @@ body {
 
 #badgescontainer {
     /* width: 70%; */
-    /* margin: 2em auto 0 ; */
+    margin: 2em auto 0 ;
+    min-height: fit-content;
     background-color: #445564;
     padding: 1em 0;
 }
@@ -233,8 +247,8 @@ body {
     background-color: #445564;
     border: 2px solid white;
     color: white;
-    padding: 5%;
-    margin: 5%;
+    padding: 1em;
+    margin: 1em;
     margin-top: -100%;
 }
 
@@ -244,6 +258,35 @@ body {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 650px) {
+    #navbarContainer {
+        position: fixed;
+        transition: top 1s ease;
+    }
+    
+    .navLi, .navLiHam {
+        display: none;
+        text-decoration: none;
+        color: var(--sec-color);
+        padding: 14px;
+        width: 100%;
+        text-align: right;
+    }
+
+    .navLiHam {
+        display: none;
+    }
+
+    #hamburger {
+        color: var(--sec-color);
+        padding: 14px 16px;
+        position: absolute;
+        right: 10px;
+    }
+
+    #hamburger:hover {
+        color: var(--acc-color); 
+    }
+
     .flex-info {
         display: flex;
         flex-direction: column;
@@ -333,6 +376,46 @@ body {
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 650px) {
+    #navbarContainer {
+        position: sticky;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: top .3s ease;
+    }
+
+    #navDiv {
+        width: 70%;
+        display: flex;
+    }
+    
+    #logo {
+        flex-grow: 10;
+        align-self: flex-start;
+    } 
+
+    .navLi, .navLiHam {
+        color: var(--sec-color);
+        padding: 14px 16px;
+        height: 100%;
+        text-decoration: none;
+        align-self: center;
+        border-radius: 0.2em;
+        transition: background-color 250ms ease-in-out;
+    }
+
+    .navLi{
+        display: block;
+    }
+
+    .navLiHam {
+        display: none;
+    }
+
+    #hamburger {
+        display: none;
+    }
+
     .flex-info {
         display: flex;
         flex-direction: row-reverse;
