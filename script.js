@@ -73,11 +73,15 @@ function hideText(badge) {
 }
 
 function carousel(element) {
-    console.log(element.nextElementSibling.children[0].outerHTML)
-
+    console.log(element.nextElementSibling.children.length)
     var countdownAan = () => {
-        element.innerHTML = element.nextElementSibling.children[nummer_carousel % 3].outerHTML
         nummer_carousel++
+        var aantal_pupils = element.nextElementSibling.children.length;
+        var orgineel = element;
+        var nieuw = element.nextElementSibling.children[nummer_carousel % aantal_pupils];
+        orgineel.style.left = "50%";
+        nieuw.style.right = "50%";
+        orgineel.innerHTML = nieuw.outerHTML
     }
     // var zetaan = 
     setInterval(countdownAan, 3000);
