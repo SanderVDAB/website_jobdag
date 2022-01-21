@@ -1,4 +1,4 @@
-var containerInfoJobDag = document.getElementById("containerInfoJobDag");
+var jobdag = document.getElementById("jobdag");
 var countdown = document.getElementById("countdown");
 var redirectToSignUp = document.getElementById("redirectToSignUp");
 var dayDiv = document.getElementById("day");
