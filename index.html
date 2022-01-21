@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Jobdag Hybride Apps</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="navbar.css">
 </head>
 
 <body>
@@ -19,16 +19,16 @@
             <a id="logo" href="#home"><img src="img/logo.png" alt="logo"></a>
             <a id="hamburger" href="javascript:void(0);" class="icon" onclick="navMenue()">
                 <i class="fa fa-bars fa-2x"></i></a>
-            <a class="navLi" href="#containerInfoJobDag">Jobdag</a>
+            <a class="navLi" href="#jobdag">Jobdag</a>
             <a class="navLi" href="#cursisten">Cursisten</a>
             <a class="navLi" href="#opleiding">Opleiding</a>
-            <a class="navLiHam" href="#containerInfoJobDag" onclick="clickMenuItem()">Jobdag</a>
+            <!-- <a class="navLiHam" href="#jobdag" onclick="clickMenuItem()">Jobdag</a>
             <a class="navLiHam" href="#cursisten" onclick="clickMenuItem()">Cursisten</a>
-            <a class="navLiHam" href="#opleiding" onclick="clickMenuItem()">Opleiding</a>
+            <a class="navLiHam" href="#opleiding" onclick="clickMenuItem()">Opleiding</a> -->
         </div>
     </nav>
     <div class="scroll-container">
-        <section id="containerInfoJobDag" class="scroll-section">
+        <section id="jobdag" class="scroll-section">
             <div class="flex-info">
                 <h1>JOBDAG HYBRIDE APPS HEVERLEE</h1>
                 <div class="flex-info2">
@@ -40,13 +40,11 @@
                         <div id="min"></div>
                         <div id="sec"></div>
                     </div>
-                    <div class="redirectText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde ducimus
-                        autem,
-                        amet quaerat odit maxime.</div>
+                    <div class="redirectText">Countdown naar de jobdag, deze zal plaatsvinden op 21 februari 2021.
+                    </div>
                     <div class="btn-container">
                         <i class="fas fa-angle-double-right"></i>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScpcDGl51UZmMx_y5UVVUmlNQkk0_pyxuUi0MePC_jJ0N3t4Q/viewform?usp=sf_link"
-                            target="_blank">
+                        <a href="https://forms.gle/Yj8Wf25uNzhAf5fA6" target="_blank">
                             <div id="redirectToSignUp"> Sign Up </div>
                         </a>
                         <i class="fas fa-angle-double-left"></i>
@@ -56,45 +54,60 @@
 
             <div class="info-text">
                 <h2>Wat is de jobdag</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Voluptatibus illo eum iusto porro corporis
-                    sapiente amet, saepe quibusdam cupiditate ad omnis, aliquid perspiciatis culpa natus totam et.
-                    Inventore
-                    ab commodi autem magnam, consequatur labore hic enim obcaecati optio nulla provident error
-                    voluptate
-                    tempora impedit, dolores quod a dicta. Aliquid nesciunt tempora sint vero omnis placeat aliquam
-                    fuga
-                    eum. Accusamus consequuntur fugiat vero laudantium fuga rerum aperiam autem quas nihil
-                    consequatur,
-                    quisquam neque molestiae dolore delectus commodi dignissimos nulla voluptates deleniti odit
-                    tenetur.
-                    Culpa quo molestiae dignissimos? Ducimus dignissimos culpa, autem distinctio eius ad nihil,
-                    totam
-                    temporibus, aliquam delectus asperiores illum!</p>
+                <div class="info-text-flex">
+                    <div>
+                        <p>Op de jobdag krijgen recruiters en vers afgestudeerde cursisten de kans om elkaar te
+                            ontmoeten.
+                            Hier
+                            zult u doorheen de dag de cursisten via een persoonlijk gesprek van 15 minuten te leren
+                            kennen.
+                            Dit geeft de cursisten de kans om hun capaciteiten als developers voor te stellen, als een
+                            soort
+                            van
+                            speeddate.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3>Planning</h3>
+                        <ul>
+                            <li><span>09u00-12u30</span> Persoonlijke gesprekken</li>
+                            <li><span>12u30-13u00</span> Lunchpauze</li>
+                            <li><span>13u00-16u30</span> Persoonlijke gesprekken deel 2</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="info-pupils scroll-section" id="cursisten">
             <div id="intro-pupils">
                 <h2>Vers talent</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit sit
-                    eligendi quia placeat cum
-                    repellendus ipsum repellat quasi aspernatur nulla id inventore illum nobis similique, ipsa eveniet
-                    maxime sunt accusantium!</p><br>
+                <p>Vers uit de “coding” fabriek, presenteren wij met trots jullie mogelijke nieuwe aanwinsten!
+                    Graag presenteren zij ook hun CV een een eigen project.
+                </p><br>
             </div>
             <div id="pupil-carousel"></div>
             <div id="pupils">
                 <div class="pupil">
-                    <img src="./img/polaroidpic.png" alt="Sander_foto">
-                    <!-- <p>Sander</p> -->
+                    <a href="#" target="_blank" rel="noopener noreferrer"><img src="./img/ali_pol.jpg"
+                            alt="Ali_foto"></a>
                 </div>
                 <div class="pupil">
-                    <img src="./img/polaroidpic.png" alt="Sander_foto">
-                    <!-- <p>Derk</p> -->
+                    <a href="https://sandervdab.github.io/extra_oef/
+                    " target="_blank" rel="noopener noreferrer"><img src="./img/sander_pol.jpg" alt="Sander_foto"></a>
                 </div>
                 <div class="pupil">
-                    <img src="./img/polaroidpic.png" alt="Sander_foto">
-                    <!-- <p>Test</p> -->
+                    <a href="#" target="_blank" rel="noopener noreferrer"><img src="./img/semmi_pol.jpg"
+                            alt="Semmi_foto"></a>
+                </div>
+                <div class="pupil">
+                    <a href="https://www.merelverdegaal.nl" target="_blank" rel="noopener noreferrer"><img
+                            src="./img/merel_pol.jpg" alt="Merel_foto"></a>
+                </div>
+                <div class="pupil">
+                    <a href="https://woutermathues.github.io/obsidianthievesproject/
+                    " target="_blank" rel="noopener noreferrer"><img src="./img/wouter_pol.jpg" alt="Wouter_foto"></a>
                 </div>
             </div>
         </section>
@@ -110,34 +123,34 @@
                 Culpa quo molestiae dignissimos? Ducimusdignissimos culpa, autem distinctio eius ad nihil,totam
                 temporibus, aliquam delectus asperiores illum!</p>
             <div id="badgescontainer">
-                <h3>Coding badges:</h3>
+                <h3>Toolbox</h3>
                 <div id="codeerbadge">
                     <div class="badge" id="html" onmouseover="showText(this)" onmouseout="hideText(this)">
                         <img src="./img/html.png" alt="html">
                         <div class="uitleg">
                             <h6>HTML</h6>
-                            <p>HTML gebruiken we om de tekst in een webpagina te schrijven</p>
+                            <p>gebruiken we om de tekst in een webpagina te schrijven</p>
                         </div>
                     </div>
                     <div class="badge" id="css" onmouseover="showText(this)" onmouseout="hideText(this)">
                         <img src="./img/css.png" alt="css">
                         <div class="uitleg">
                             <h6>CSS</h6>
-                            <p>CSS gebruiken we om de HTML tekst/pagina een opmaak mee te geven</p>
+                            <p>gebruiken we om de HTML tekst/pagina een opmaak mee te geven</p>
                         </div>
                     </div>
                     <div class="badge" id="js" onmouseover="showText(this)" onmouseout="hideText(this)">
                         <img src="./img/js.png" alt="javascript">
                         <div class="uitleg">
                             <h6>Javascript</h6>
-                            <p>Javascript dient ervoor om functionaliteit in de webpagina te steken.</p>
+                            <p>dient ervoor om functionaliteit in de webpagina te steken.</p>
                         </div>
                     </div>
                     <div class="badge" id="mysql" onmouseover="showText(this)" onmouseout="hideText(this)">
                         <img src="./img/mysql.png" alt="mysql">
                         <div class="uitleg">
                             <h6>MySQL</h6>
-                            <p>MySQL gebruiken we om een database op te stellen en te beheren</p>
+                            <p>gebruiken we om een database op te stellen en te beheren</p>
                         </div>
                     </div>
                     <div class="badge" id="ionic" onmouseover="showText(this)" onmouseout="hideText(this)">
