@@ -87,9 +87,17 @@ function carousel(element) {
     setInterval(countdownAan, 3000);
 }
 
-
+function fixHeight() {
+    var pupils = document.getElementById("pupils")
+    var img_height = pupils.children[0].children[0].children[0].clientHeight
+    for (var i = 0; i < pupils.children.length; i++) {
+        pupils.children[i].style.height = `${img_height}px`
+    }
+    console.log(img_height, pupils.children[0])
+}
 
 window.addEventListener("load", carousel(carousel_HTML))
+// window.addEventListener("resize", fixHeight());
 
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
