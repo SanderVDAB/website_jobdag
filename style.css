@@ -49,6 +49,7 @@ body {
     margin-top: 0;
     background-color: var(--prim-color);
     box-shadow: 3px 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
 }
 
 .navLi:hover {
@@ -220,12 +221,12 @@ body {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.666);
 }
 
-/* .pupil p{
-    margin-top: -10%;
-    color: var(--prim-color);
-} */
-
-
+.pupil .download{
+    width: 100%;
+    position: relative;
+    z-index: 5;
+    /* background-color: hotpink; */
+}
 
 #badgescontainer {
     /* width: 70%; */
@@ -267,6 +268,10 @@ body {
     z-index: 1;
     filter: drop-shadow(0px 0px 10px #0000007a);
     padding: 10px;
+}
+
+.badge img:hover{
+    transition: all 5 linear;
 }
 
 
@@ -385,6 +390,16 @@ body {
         min-width: 250px;
         margin-bottom: 2em;
 
+    }
+
+    #pupil-carousel .pupil .download {
+        height: 2.8em;
+        bottom: 3em;
+    }
+
+    .pupil .download {
+        height: 0.7em;
+        bottom: 1.1em;
     }
     
     .uitleg {
@@ -524,6 +539,16 @@ body {
 
     }
 
+    #pupil-carousel .pupil .download {
+        height: 3.3em;
+        bottom: 3.5em;
+    }
+
+    .pupil .download {
+        height: 2em;
+        bottom: 2.3em;
+    }
+
 }
 
 @media only screen and (min-width: 1300px) {
@@ -600,5 +625,15 @@ body {
 
     .badge:hover {
         cursor: pointer;
+    }
+
+    #pupil-carousel .pupil .download {
+        height: 3em;
+        bottom: 3.5em;
+    }
+
+    .pupil .download {
+        height: 4em;
+        bottom: 4.3em;
     }
 }

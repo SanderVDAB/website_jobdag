@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+
+   <style>
+      *{
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+      }
+
+      .container{
+         margin: 0 auto;
+
+      }
+
+      .test{
+         width: fit-content;
+         background-color: hotpink;
+         position: relative;
+         overflow: hidden;
+      }
+
+      .test:hover{
+         left: 10px;
+         transition: left 1s linear;
+      }
+
+      .intro{
+         position: relative;
+         /* right: 100%;
+         transition: right 1s ease; */
+      }
+
+      .outro{
+         position: relative;
+         /* left: 100%;
+         transition: left 1s ease; */
+      }
+
+      /* .test:hover{
+         left: 50px;
+         transition: all 1s ease;
+         visibility: hidden;
+      } */
+
+      #test1{
+         display: flex;
+      }
+
+      /* #test1 .in{
+         width: 30px;
+         right: 20px;
+      } */
+
+      /* #test1 .out{
+         width: 10px;
+         right: 20px;
+      } */
+
+   </style>
+</head>
+<body>
+   <div id="roulette"></div>
+   <div id="test1"></div>
+   <div id="container">
+      <div class="test">test1</div>
+      <div class="test" style="background-color: red;">test2</div>
+      <div class="test">test3</div>
+   </div>
+
+   <script>
+      var roulette = document.getElementById("roulette");
+      var test1 = document.getElementById("test1");
+      var container = document.getElementById("container")
+      var test = container.getElementsByClassName("test");
+      var huidige_test = 0;
+      var percentagegetal = 0;
+      var aantal_delen = 10;
+
+      function percentageOpteller(){
+         var percentage = Math.round(((percentagegetal) % (aantal_delen + 1)) / aantal_delen * 100) / 100;
+         percentagegetal ++;
+         return percentage;
+      }
+
+      function naarLinks(percentage){
+         var eerste = document.getElementsByClassName("in")[0];
+         var breedte = eerste.clientWidth;
+         var tweede = document.getElementsByClassName("out")[0];
+         eerste.style.width = `${breedte}px`;
+         eerste.style.right = `${percentage * breedte}px`;
+         tweede.style.width = `${percentage * breedte}px`;
+         tweede.style.right = `${percentage * breedte}px`;
+         // console.log(eerste, tweede, breedte, percentage * breedte, eersteparentElement.clientWidth, `${breedte}px`);
+      }
+
+      function slide(){      
+         var interval = setInterval(slideleft, 100)
+         function slideleft(){
+            var percentage = percentageOpteller()
+            console.log(percentage)
+            naarLinks(percentage);
+         }
+         function stopslide(){
+            clearInterval(interval)
+         }
+         setTimeout(stopslide, 1000)         
+      }
+      
+      
+      
+      // console.log(roulette, test, test[0].clientWidth);
+
+      // function loopHuidigeTest(){
+      //    return huidige_test = (huidige_test + 1) % (test.length);
+      // }
+      
+      // // for(var i = 0; i < 10; i++){
+      // //    console.log(loopHuidigeTest())
+      // // }
+      
+      // setInterval(makeRoulette, 2000)
+
+      // function makeRoulette(){ 
+      //    roulette.classList.add("outro");
+      //    setTimeout(function(){
+      //       roulette.classList.remove("outro");
+      //       roulette.innerHTML = test[loopHuidigeTest()].outerHTML;
+      //       roulette.classList.add("intro");
+      //    }, 1000)
+      //    setTimeout(function(){
+      //       roulette.classList.remove("intro");
+      //    }, 2000)
+      // }
+
+      // function slider() {
+      //    var breedte = test1.clientWidth
+      //    var oude = test1.nextElementSibling.children[huidige_test];
+      //    var nieuwe = test1.nextElementSibling.children[huidige_test + 1];
+      //    test1.innerHTML = `${oude.outerHTML + nieuwe.outerHTML}` 
+      //    oude = test1.children[0];
+      //    nieuwe = test1.children[1];
+      //    oude.classList.add("in");
+      //    nieuwe.classList.add("out");
+      //    console.log(breedte, oude, nieuwe)
+      // }
+      // slider();
+      
+
+      // document.addEventListener("load", () => {roulette.innerHTML = test[0].outerHTML})
+
+   </script>
+</body>
+</html>
