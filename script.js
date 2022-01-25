@@ -72,6 +72,7 @@ function hideText(badge) {
     badge.children[1].style.visibility = "hidden"
 }
 
+<<<<<<< HEAD
 function carousel(element) {
     console.log(element.nextElementSibling.children.length)
     var countdownAan = () => {
@@ -85,16 +86,34 @@ function carousel(element) {
     }
     // var zetaan = 
     setInterval(countdownAan, 3000);
+=======
+function loopHuidigeTest() {
+    return nummer_carousel = (nummer_carousel + 1) % (pupil.length);
+>>>>>>> 23835d79583cbb3d7aff599a63783a78ba6aa347
 }
 
-function fixHeight() {
-    var pupils = document.getElementById("pupils")
-    var img_height = pupils.children[0].children[0].children[0].clientHeight
-    for (var i = 0; i < pupils.children.length; i++) {
-        pupils.children[i].style.height = `${img_height}px`
-    }
-    console.log(img_height, pupils.children[0])
+function carousel() {
+    carousel_HTML.classList.add("outro");
+    setTimeout(function () {
+        carousel_HTML.classList.remove("outro");
+        carousel_HTML.innerHTML = pupil[loopHuidigeTest()].outerHTML;
+        carousel_HTML.classList.add("intro");
+    }, 1000)
+    setTimeout(function () {
+        carousel_HTML.classList.remove("intro");
+    }, 2000)
 }
+
+setInterval(carousel, 2000)
+
+// function fixHeight() {
+//     var pupils = document.getElementById("pupils")
+//     var img_height = pupils.children[0].children[0].children[0].clientHeight
+//     for (var i = 0; i < pupils.children.length; i++) {
+//         pupils.children[i].style.height = `${img_height}px`
+//     }
+//     console.log(img_height, pupils.children[0])
+// }
 
 window.addEventListener("load", carousel(carousel_HTML))
 // window.addEventListener("resize", fixHeight());

@@ -144,6 +144,7 @@
          roulette.classList.add("outro");
          setTimeout(function(){
             roulette.classList.remove("outro");
+<<<<<<< HEAD
             roulette.innerHTML = test[loopHuidigeTest()].outerHTML;
             roulette.classList.add("intro");
          }, 1000)
@@ -153,6 +154,16 @@
          }, 2000)
          setTimeout(function(){
             roulette.classList.remove("stay");
+=======
+            roulette.innerHTML += test[loopHuidigeTest()].outerHTML;
+         }, 1000)
+         setTimeout(function(){
+            roulette.classList.add("intro");
+         }, 2000)
+         setTimeout(function(){
+            roulette.classList.remove("intro");
+            roulette.innerHTML = test[loopHuidigeTest()].outerHTML;
+>>>>>>> 23835d79583cbb3d7aff599a63783a78ba6aa347
          }, 3000)
       }
 
