@@ -11,13 +11,30 @@ var carousel_HTML = document.getElementById("pupil-carousel")
 var pupil = document.getElementsByClassName("pupil");
 var nummer_carousel = 0;
 
-function navMenue() {
-    // let x = document.getElementsByClassName("navLi");
-    let x = document.getElementsByClassName("navLiHam");
-    for (let i = 0; i < x.length; i++) {
-        (x[i].style.display === "block" ? x[i].style.display = "none" : x[i].style.display = "block");
-    }
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", mobileMenu);
+
+function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
 }
+
+const navLink = document.querySelectorAll(".nav-link");
+
+navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}
+
+// function navMenue() {
+//     // let x = document.getElementsByClassName("navLi");
+//     let x = document.getElementById("nav-list-container");
+//     x.style.display === "flex" ? x.style.display = "none" : x.style.display = "flex";
+// }
 
 function clickMenuItem() {
     // let x = document.getElementsByClassName("navLi");
@@ -85,10 +102,14 @@ function carousel() {
     }, 1000)
     setTimeout(function () {
         carousel_HTML.classList.remove("intro");
+        carousel_HTML.classList.add("stay");
     }, 2000)
+    setTimeout(function () {
+        carousel_HTML.classList.remove("stay");
+    }, 3000)
 }
 
-setInterval(carousel, 2000)
+setInterval(carousel, 3000)
 
 // function fixHeight() {
 //     var pupils = document.getElementById("pupils")

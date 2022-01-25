@@ -14,19 +14,42 @@
 </head>
 
 <body>
-    <nav id="navbarContainer">
-        <div id="navDiv">
+    <header class="header">
+        <nav class="navbar">
             <a id="logo" href="#home"><img src="img/logo.png" alt="logo"></a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#jobdag" class="nav-link">Jobdag</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#cursisten" class="nav-link">Cursisten</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#opleiding" class="nav-link">Opleiding</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    <!-- <nav id="navbarContainer">
+        <div id="navDiv">
             <a id="hamburger" href="javascript:void(0);" class="icon" onclick="navMenue()">
                 <i class="fa fa-bars fa-2x"></i></a>
-            <a class="navLi" href="#jobdag">Jobdag</a>
-            <a class="navLi" href="#cursisten">Cursisten</a>
-            <a class="navLi" href="#opleiding">Opleiding</a>
-            <!-- <a class="navLiHam" href="#jobdag" onclick="clickMenuItem()">Jobdag</a>
+            <div id="nav-list-container">
+                <a class="navLi" href="#jobdag">Jobdag</a>
+                <a class="navLi" href="#cursisten">Cursisten</a>
+                <a class="navLi" href="#opleiding">Opleiding</a>
+            </div>
+            <a class="navLiHam" href="#jobdag" onclick="clickMenuItem()">Jobdag</a>
             <a class="navLiHam" href="#cursisten" onclick="clickMenuItem()">Cursisten</a>
-            <a class="navLiHam" href="#opleiding" onclick="clickMenuItem()">Opleiding</a> -->
+            <a class="navLiHam" href="#opleiding" onclick="clickMenuItem()">Opleiding</a>
         </div>
-    </nav>
+    </nav> -->
+
     <div class="scroll-container">
         <section id="jobdag" class="scroll-section">
             <div class="flex-info">
@@ -192,21 +215,21 @@
                             <p>is een platform en framework om single pages te maken met HTML en TypeScript</p>
                         </div>
                     </div>
-                    <div class="badge" id="html" onmouseover="showText(this)" onmouseout="hideText(this)">
+                    <div class="badge" id="sass" onmouseover="showText(this)" onmouseout="hideText(this)">
                         <img src="./img/sass.png" alt="sass">
                         <div class="uitleg">
                             <h6>SASS</h6>
                             <p>voor een extra sassy opmaak van de webpagina</p>
                         </div>
                     </div>
-                    <div class="badge" id="html" onmouseover="showText(this)" onmouseout="hideText(this)">
+                    <div class="badge" id="bs" onmouseover="showText(this)" onmouseout="hideText(this)">
                         <img src="./img/bootstrap.png" alt="bootstrap">
                         <div class="uitleg">
                             <h6>Bootstrap</h6>
                             <p>gebruiken we als handige front-end framework tool</p>
                         </div>
                     </div>
-                    <div class="badge" id="html" onmouseover="showText(this)" onmouseout="hideText(this)">
+                    <div class="badge" id="git" onmouseover="showText(this)" onmouseout="hideText(this)">
                         <img src="./img/github.png" alt="github">
                         <div class="uitleg">
                             <h6>Github</h6>
