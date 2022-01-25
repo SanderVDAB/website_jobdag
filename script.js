@@ -79,8 +79,8 @@ function carousel(element) {
         var aantal_pupils = element.nextElementSibling.children.length;
         var orgineel = element;
         var nieuw = element.nextElementSibling.children[nummer_carousel % aantal_pupils];
-        orgineel.style.left = "50%";
-        nieuw.style.right = "50%";
+        // orgineel.style.left = "50%";
+        // nieuw.style.right = "50%";
         orgineel.innerHTML = nieuw.outerHTML
     }
     // var zetaan = 
