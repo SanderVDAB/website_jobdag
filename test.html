@@ -13,9 +13,16 @@
          box-sizing: border-box;
       }
 
-      .container{
+      #tv{
+         width: 300px;
          margin: 0 auto;
+         overflow: hidden;
+      }
 
+      #container{
+         width: 300px;
+         margin: 0 auto;
+         display: none;
       }
 
       .test{
@@ -29,54 +36,58 @@
          left: 10px;
          transition: left 1s linear;
       }
+      
+      #roulette {
+         /* width: 300px; */
+         position: relative;
+         display: flex;
+         flex-direction: row;
+      }
 
       .intro{
-         position: relative;
-         /* right: 100%;
-         transition: right 1s ease; */
+         animation-name: intro;
+         animation-duration: 1s;
+         /* animation-delay: 1s; */
+         animation-iteration-count: infinite;         
       }
-
+      
       .outro{
-         position: relative;
-         /* left: 100%;
-         transition: left 1s ease; */
+         animation-name: outro;
+         animation-duration: 1s;
+         /* animation-delay: 1s; */
+         animation-iteration-count: infinite;         
       }
 
-      /* .test:hover{
-         left: 50px;
-         transition: all 1s ease;
-         visibility: hidden;
-      } */
-
-      #test1{
-         display: flex;
+      @keyframes intro {
+        0%   {left:300px;}
+        25%  {left:225px;}
+        50%  {left:150px;}
+        75%  {left:75px; }
+        100% {left:0px;}
       }
 
-      /* #test1 .in{
-         width: 30px;
-         right: 20px;
-      } */
-
-      /* #test1 .out{
-         width: 10px;
-         right: 20px;
-      } */
-
+      @keyframes outro {
+        0%   {left:0px;}
+        25%  {left:-75px;}
+        50%  {left:-150px;}
+        75%  {left:-225px;}
+        100% {left:-300px;}
+      }
    </style>
 </head>
 <body>
-   <div id="roulette"></div>
-   <div id="test1"></div>
+   <div id="tv">      
+      <div id="roulette"></div>
+   </div>
    <div id="container">
-      <div class="test">test1</div>
-      <div class="test" style="background-color: red;">test2</div>
-      <div class="test">test3</div>
+      <div class="test"><img src="./img/html.png" alt=""></div>
+      <div class="test"><img src="./img/css.png" alt=""></div>
+      <div class="test"><img src="./img/js.png" alt=""></div>
    </div>
 
    <script>
       var roulette = document.getElementById("roulette");
-      var test1 = document.getElementById("test1");
-      var container = document.getElementById("container")
+      var container = document.getElementById("container");
       var test = container.getElementsByClassName("test");
       var huidige_test = 0;
       var percentagegetal = 0;
@@ -111,32 +122,38 @@
          }
          setTimeout(stopslide, 1000)         
       }
+
+      function maakCarousel(){
+         // console.log(slide())
+         slide()
+      }
+
+      document.addEventListener("load", maakCarousel())
       
       
       
       // console.log(roulette, test, test[0].clientWidth);
 
-      // function loopHuidigeTest(){
-      //    return huidige_test = (huidige_test + 1) % (test.length);
-      // }
+      function loopHuidigeTest(){
+         return huidige_test = (huidige_test + 1) % (test.length);
+      }
       
-      // // for(var i = 0; i < 10; i++){
-      // //    console.log(loopHuidigeTest())
-      // // }
-      
-      // setInterval(makeRoulette, 2000)
+      setInterval(makeRoulette, 3000)
 
-      // function makeRoulette(){ 
-      //    roulette.classList.add("outro");
-      //    setTimeout(function(){
-      //       roulette.classList.remove("outro");
-      //       roulette.innerHTML = test[loopHuidigeTest()].outerHTML;
-      //       roulette.classList.add("intro");
-      //    }, 1000)
-      //    setTimeout(function(){
-      //       roulette.classList.remove("intro");
-      //    }, 2000)
-      // }
+      function makeRoulette(){ 
+         roulette.classList.add("outro");
+         setTimeout(function(){
+            roulette.classList.remove("outro");
+            roulette.innerHTML += test[loopHuidigeTest()].outerHTML;
+         }, 1000)
+         setTimeout(function(){
+            roulette.classList.add("intro");
+         }, 2000)
+         setTimeout(function(){
+            roulette.classList.remove("intro");
+            roulette.innerHTML = test[loopHuidigeTest()].outerHTML;
+         }, 3000)
+      }
 
       // function slider() {
       //    var breedte = test1.clientWidth
@@ -152,7 +169,6 @@
       // slider();
       
 
-      // document.addEventListener("load", () => {roulette.innerHTML = test[0].outerHTML})
 
    </script>
 </body>
