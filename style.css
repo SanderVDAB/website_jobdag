@@ -71,7 +71,7 @@ body {
     padding: 1rem 1.5rem; 
     background-color: var(--prim-color);
     box-shadow: 3px 0 10px rgba(0, 0, 0, 0.5);
-    transition: top .3s ease;  
+    transition: top .5s ease-in-out;  
 }
 
 .navbar {
@@ -143,8 +143,10 @@ body {
     font-size: 2.5em;    
 }
 
-#redirectText{
+.redirectText{
     display: block;
+    font-size: 1.2em;
+    font-weight: 500;
 }
 
 #day, #hr, #min, #sec {
@@ -195,6 +197,12 @@ body {
     border-radius: .2em .2em 0 0;
     /* border: #314455 1px solid; */
 } 
+
+.over-opleiding {
+    margin: 3rem 0;
+}
+
+
 
 .info-text-flex {
     display: flex;
@@ -251,7 +259,7 @@ body {
 }
 
 #intro-pupils{
-    width: 70%;
+    width: 90%;
     margin: 0 auto;
     padding: 2em 3em;
 }
@@ -408,7 +416,6 @@ body {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 650px) {
-
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -418,7 +425,7 @@ body {
         width: 100%;
         border-radius: 10px;
         text-align: center;
-        transition: 0.3s;
+        transition: 0.3s ease;
         box-shadow:
             0 10px 27px rgba(0, 0, 0, 0.05);
     }
@@ -428,11 +435,11 @@ body {
     }
 
     .nav-item {
-        margin: 1.5rem 0;
+        margin: 1.2rem 0;
+        font-size: 1.6rem;
     }
 
     .nav-link{
-        font-size: 1.6rem;
         font-weight: 600;
         color: var(--prim-color);
     }
@@ -682,8 +689,8 @@ body {
 
     .flex-info h1{
         width: 50%;
-        font-size: 3em;
-        /* align-self:; */
+        font-size: 4em;
+        align-self: center;
         text-align: right;
         overflow: hidden;
         line-height: 1.2em;
@@ -694,6 +701,7 @@ body {
         flex-direction: column;
         justify-content: space-evenly;
         width: 35%;
+        min-height: 310px ;
     }
 
     #countdown div {
@@ -753,10 +761,12 @@ body {
 
     .flex-info {
         width: 70%;
+        min-height: 310px;
     }
 
     .flex-info h1{
         width: 35%;
+        max-width: 450px;
         font-size: 4em;
         /* align-self:; */
         text-align: right;
@@ -787,6 +797,9 @@ body {
         /* border: #314455 1px solid; */
     } 
 
+    #intro-pupils{
+        width: 70%;
+    }
     #pupil-carousel{
         width: 70%;
         margin: 0 auto;

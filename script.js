@@ -127,9 +127,9 @@ var prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
     var currentScrollPos = window.pageYOffset;
     if (prevScrollpos > currentScrollPos) {
-        document.getElementById("navbarContainer").style.top = "0";
+        document.getElementById("header").style.top = "0";
     } else {
-        document.getElementById("navbarContainer").style.top = "-70.8px";
+        document.getElementById("header").style.top = "-110px";
     }
     prevScrollpos = currentScrollPos;
 }
