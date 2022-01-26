@@ -102,11 +102,7 @@ function carousel() {
     }, 1000)
     setTimeout(function () {
         carousel_HTML.classList.remove("intro");
-        carousel_HTML.classList.add("stay");
     }, 2000)
-    setTimeout(function () {
-        carousel_HTML.classList.remove("stay");
-    }, 3000)
 }
 
 setInterval(carousel, 3000)
@@ -133,3 +129,10 @@ window.onscroll = function () {
     }
     prevScrollpos = currentScrollPos;
 }
+
+
+function fixbreedte() {
+    console.log(carousel_HTML.chlidren)
+}
+
+window.addEventListener("resize", fixbreedte());
