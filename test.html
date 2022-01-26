@@ -15,10 +15,11 @@
 
       :root{
          --test: 100px
+         --breedte_tv: 100px
       }
 
       #tv{
-         width: var(--test);
+         width: var(--breedte_tv);
          margin: 0 auto;
          overflow: hidden;
       }
@@ -42,7 +43,7 @@
       }
       
       #roulette {
-         /* width: 300px; */
+         width: var(--test);
          position: relative;
          display: flex;
          flex-direction: row;
@@ -151,11 +152,22 @@
       
       setInterval(makeRoulette, 3000)
 
-      function makeRoulette(){ 
+      function makeRoulette(){
+            var get_variabele = getComputedStyle(document.body).getPropertyValue('--test');
+            var roulette_width = parseInt(get_variabele);
+            loopHuidigeTest();
+            console.log(huidige_test, roulette.clientWidth, roulette_width, get_variabele);
+            roulette.innerHTML += test[huidige_test].outerHTML;
+            document.documentElement.style.setProperty('--breedte_tv', `${roulette_width}px`);
+            roulette_width = roulette_width * 2;
+            document.documentElement.style.setProperty('--test', `${roulette_width}px`);
             roulette.classList.add("outro");
+            console.log(roulette.clientWidth, roulette_width);
          setTimeout(function(){
             roulette.classList.remove("outro");
-            roulette.innerHTML = test[loopHuidigeTest()].outerHTML;
+            roulette_width = roulette_width / 2;
+            document.documentElement.style.setProperty('--test', `${roulette_width}px`);
+            roulette.innerHTML = test[huidige_test].outerHTML;
             roulette.classList.add("intro");
          }, 1000)
          setTimeout(function(){
@@ -164,8 +176,7 @@
       }
 
       function fixbreedte() {
-         console.log(roulette.clientWidth)
-         
+         console.log(roulette.clientWidth)         
       }
 
       window.addEventListener("resize", fixbreedte());

@@ -278,7 +278,7 @@ body {
 
 #roulette {
     margin: 0 auto;
-    width: 30px;
+    width: fit-content;
     position: relative;
     text-overflow: hidden;
 }
@@ -298,11 +298,11 @@ body {
 }
 
 @keyframes intro {
-  0%   {left:30px; right:0px;}
-  25%  {left:22.5px; right:0px;}
-  50%  {left:15px; right:0px;}
-  75%  {left:7.5px; right:0px;}
-  100% {left:0px; right:0px;}
+  0%   {left:30px;}
+  25%  {left:22.5px;}
+  50%  {left:15px;}
+  75%  {left:7.5px;}
+  100% {left:0px;}
 }
 
 @keyframes outro {
