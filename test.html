@@ -13,8 +13,12 @@
          box-sizing: border-box;
       }
 
+      :root{
+         --test: 100px
+      }
+
       #tv{
-         width: 300px;
+         width: var(--test);
          margin: 0 auto;
          overflow: hidden;
       }
@@ -46,14 +50,14 @@
 
       .intro{
          animation-name: intro;
-         animation-duration: 1s;
+         animation-duration: 1.1s;
          /* animation-delay: 1s; */
          animation-iteration-count: infinite;         
       }
       
       .outro{
          animation-name: outro;
-         animation-duration: 1s;
+         animation-duration: 1.1s;
          /* animation-delay: 1s; */
          animation-iteration-count: infinite;         
       }
@@ -86,7 +90,9 @@
    </div>
 
    <script>
+      var tv = document.getElementById("tv")
       var roulette = document.getElementById("roulette");
+      var container = document.getElementById("container");
       var container = document.getElementById("container");
       var test = container.getElementsByClassName("test");
       var huidige_test = 0;
@@ -99,73 +105,70 @@
          return percentage;
       }
 
-      function naarLinks(percentage){
-         var eerste = document.getElementsByClassName("in")[0];
-         var breedte = eerste.clientWidth;
-         var tweede = document.getElementsByClassName("out")[0];
-         eerste.style.width = `${breedte}px`;
-         eerste.style.right = `${percentage * breedte}px`;
-         tweede.style.width = `${percentage * breedte}px`;
-         tweede.style.right = `${percentage * breedte}px`;
-         // console.log(eerste, tweede, breedte, percentage * breedte, eersteparentElement.clientWidth, `${breedte}px`);
+      function loopHuidigeTest(){
+         return huidige_test = (huidige_test + 1) % (test.length);
       }
 
-      function slide(){      
-         var interval = setInterval(slideleft, 100)
-         function slideleft(){
-            var percentage = percentageOpteller()
-            console.log(percentage)
-            naarLinks(percentage);
-         }
-         function stopslide(){
-            clearInterval(interval)
-         }
-         setTimeout(stopslide, 1000)         
-      }
+      // function naarLinks(percentage){
 
-      function maakCarousel(){
-         // console.log(slide())
-         slide()
-      }
+      //    var eerste = container.children[huidige_test];
+      //    var tweede = container.children[loopHuidigeTest()];
+      //    console.log(eerste, tweede);
+      //    roulette.innerHTML = eerste.outerHTML + tweede.outerHTML
+      //    var breedte = 100;
+      //    // var tweede = document.getElementsByClassName("out")[0];
 
-      document.addEventListener("load", maakCarousel())
+      //    eerste.style.width = `${breedte}px`;
+      //    eerste.style.right = `${percentage * breedte}px`;
+      //    tweede.style.width = `${percentage * breedte}px`;
+      //    tweede.style.right = `${percentage * breedte}px`;
+      //    // console.log(eerste, tweede, breedte, percentage * breedte, eersteparentElement.clientWidth, `${breedte}px`);
+      // }
+
+      // function slide(){      
+      //    var interval = setInterval(slideleft, 1000)
+      //    function slideleft(){
+      //       var percentage = percentageOpteller()
+      //       console.log(percentage)
+      //       naarLinks(percentage);
+      //    }
+      //    function stopslide(){
+      //       clearInterval(interval)
+      //    }
+      //    setTimeout(stopslide, 10000)         
+      // }
+
+      // function maakCarousel(){
+      //    // console.log(slide())
+      //    slide()
+      // }
+
+      // document.addEventListener("load", maakCarousel())
       
       
       
       // console.log(roulette, test, test[0].clientWidth);
-
-      function loopHuidigeTest(){
-         return huidige_test = (huidige_test + 1) % (test.length);
-      }
       
       setInterval(makeRoulette, 3000)
 
       function makeRoulette(){ 
-         roulette.classList.add("outro");
+            roulette.classList.add("outro");
          setTimeout(function(){
             roulette.classList.remove("outro");
-<<<<<<< HEAD
             roulette.innerHTML = test[loopHuidigeTest()].outerHTML;
             roulette.classList.add("intro");
          }, 1000)
          setTimeout(function(){
             roulette.classList.remove("intro");
-            roulette.classList.add("stay");
          }, 2000)
-         setTimeout(function(){
-            roulette.classList.remove("stay");
-=======
-            roulette.innerHTML += test[loopHuidigeTest()].outerHTML;
-         }, 1000)
-         setTimeout(function(){
-            roulette.classList.add("intro");
-         }, 2000)
-         setTimeout(function(){
-            roulette.classList.remove("intro");
-            roulette.innerHTML = test[loopHuidigeTest()].outerHTML;
->>>>>>> 23835d79583cbb3d7aff599a63783a78ba6aa347
-         }, 3000)
       }
+
+      function fixbreedte() {
+         console.log(roulette.clientWidth)
+         
+      }
+
+      window.addEventListener("resize", fixbreedte());
 
       // function slider() {
       //    var breedte = test1.clientWidth

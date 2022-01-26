@@ -41,7 +41,7 @@ body {
     height: 90vh;
 } */
 
-
+/* 
 #navbarContainer {
     top: 0;
     width: 100%;
@@ -53,8 +53,82 @@ body {
 
 .navLi:hover {
     background-color: var(--acc-color); 
+} */
+
+/* NAVBAR NIEUW */
+.nav-menu li {
+    list-style: none;
 }
 
+.nav-item a {
+    text-decoration: none;
+}
+
+.header{
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    padding: 1rem 1.5rem; 
+    background-color: var(--prim-color);
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.5);
+    transition: top .5s ease-in-out;  
+}
+
+.navbar {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;    
+    justify-content: space-between;
+    align-items: center; 
+}
+
+#logo{
+    padding-top: 10px;
+}
+
+.hamburger {
+    display: none;    
+}
+
+.bar {
+    display: block;
+    width: 35px;
+    height: 5px;
+    margin: 8px auto;
+    border-radius: .2em;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item {
+    /* width: 10rem; */
+    padding: 14px 16px;
+    margin-left: 4rem;
+    text-align: center;
+}
+
+.nav-link{
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: white;
+}
+
+.nav-item:hover{
+    background-color: var(--acc-color);
+    
+    border-radius: .2em;
+    transition: background-color 250ms ease-in-out;
+}
+
+
+/* --- FIRST SECTION JOBDAG --- */
 
 #jobdag{
     display: flex;
@@ -69,8 +143,10 @@ body {
     font-size: 2.5em;    
 }
 
-#redirectText{
+.redirectText{
     display: block;
+    font-size: 1.2em;
+    font-weight: 500;
 }
 
 #day, #hr, #min, #sec {
@@ -121,6 +197,12 @@ body {
     border-radius: .2em .2em 0 0;
     /* border: #314455 1px solid; */
 } 
+
+.over-opleiding {
+    margin: 3rem 0;
+}
+
+
 
 .info-text-flex {
     display: flex;
@@ -177,13 +259,13 @@ body {
 }
 
 #intro-pupils{
-    width: 70%;
+    width: 90%;
     margin: 0 auto;
     padding: 2em 3em;
 }
 
 #tv{
-   width: -;
+   /* width: ; */
    margin: 0 auto;
    overflow: hidden;
 }
@@ -334,13 +416,69 @@ body {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 650px) {
-    #navbarContainer {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s ease;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 1.2rem 0;
+        font-size: 1.6rem;
+    }
+
+    .nav-link{
+        font-weight: 600;
+        color: var(--prim-color);
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(13px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-13px) rotate(-45deg);
+    }
+    /* #navbarContainer {
         position: fixed;
         transition: top 1s ease;
     }
+
+    #navDiv {
+        width: 90%;
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-between;
+    }
     
-    .navLi, .navLiHam {
-        display: none;
+    #logo {
+        flex-grow: 10;
+        align-self: flex-start;
+    } 
+    
+    .navLi{ 
+        display: flex;
         text-decoration: none;
         color: var(--sec-color);
         padding: 14px;
@@ -348,20 +486,28 @@ body {
         text-align: right;
     }
 
-    .navLiHam {
+    #nav-list-container {
         display: none;
-    }
+        flex-direction: column;
+        position: relative;
+        top: 20px
+    } */
 
-    #hamburger {
+    /* .navLiHam {
+        display: none;
+    } */
+
+    /* #hamburger {
         color: var(--sec-color);
         padding: 14px 16px;
         position: absolute;
-        right: 10px;
+        top: 0;
+        right: 5%;
     }
 
     #hamburger:hover {
         color: var(--acc-color); 
-    }
+    } */
 
     .flex-info {
         display: flex;
@@ -473,11 +619,26 @@ body {
         content: "Angular";
         margin: 0 auto;
     }
+
+    #sass::after {
+        content: "Sass";
+        margin: 0 auto;
+    }
+
+    #bs::after {
+        content: "Bootstrap";
+        margin: 0 auto;
+    }
+
+    #git::after {
+        content: "Github";
+        margin: 0 auto;
+    }
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 650px) {
-    #navbarContainer {
+/* Medium devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 650px) {      
+    /* #navbarContainer {
         position: sticky;
         display: flex;
         justify-content: center;
@@ -515,7 +676,7 @@ body {
 
     #hamburger {
         display: none;
-    }
+    } */
 
     .flex-info {
         display: flex;
@@ -528,8 +689,8 @@ body {
 
     .flex-info h1{
         width: 50%;
-        font-size: 3em;
-        /* align-self:; */
+        font-size: 4em;
+        align-self: center;
         text-align: right;
         overflow: hidden;
         line-height: 1.2em;
@@ -540,6 +701,7 @@ body {
         flex-direction: column;
         justify-content: space-evenly;
         width: 35%;
+        min-height: 310px ;
     }
 
     #countdown div {
@@ -584,14 +746,27 @@ body {
 
 }
 
+
+
+@media only screen and (max-width: 1300px) {
+    .nav-link {
+        font-size: 1em;
+    }
+}
+
 @media only screen and (min-width: 1300px) {
-    
+    .navbar {
+        width: 70%;
+    }
+
     .flex-info {
         width: 70%;
+        min-height: 310px;
     }
 
     .flex-info h1{
         width: 35%;
+        max-width: 450px;
         font-size: 4em;
         /* align-self:; */
         text-align: right;
@@ -622,6 +797,9 @@ body {
         /* border: #314455 1px solid; */
     } 
 
+    #intro-pupils{
+        width: 70%;
+    }
     #pupil-carousel{
         width: 70%;
         margin: 0 auto;

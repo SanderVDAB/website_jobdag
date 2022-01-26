@@ -14,25 +14,35 @@
 </head>
 
 <body>
-    <nav id="navbarContainer">
-        <div id="navDiv">
+    <header class="header" id="header">
+        <nav class="navbar">
             <a id="logo" href="#home"><img src="img/logo.png" alt="logo"></a>
-            <a id="hamburger" href="javascript:void(0);" class="icon" onclick="navMenue()">
-                <i class="fa fa-bars fa-2x"></i></a>
-            <a class="navLi" href="#jobdag">Jobdag</a>
-            <a class="navLi" href="#cursisten">Cursisten</a>
-            <a class="navLi" href="#opleiding">Opleiding</a>
-            <!-- <a class="navLiHam" href="#jobdag" onclick="clickMenuItem()">Jobdag</a>
-            <a class="navLiHam" href="#cursisten" onclick="clickMenuItem()">Cursisten</a>
-            <a class="navLiHam" href="#opleiding" onclick="clickMenuItem()">Opleiding</a> -->
-        </div>
-    </nav>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#jobdag" class="nav-link">Jobdag</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#cursisten" class="nav-link">Cursisten</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#opleiding" class="nav-link">Opleiding</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
     <div class="scroll-container">
         <section id="jobdag" class="scroll-section">
             <div class="flex-info">
                 <h1>JOBDAG HYBRIDE APPS HEVERLEE</h1>
                 <div class="flex-info2">
-
+                    <div class="redirectText">Nog maar ...
+                    </div>
                     <div id="countdown" class="center">
                         <!-- opmaak (kleur en size) nog aan te werken als pagina volledig is  -->
                         <div id="day"></div>
@@ -40,7 +50,7 @@
                         <div id="min"></div>
                         <div id="sec"></div>
                     </div>
-                    <div class="redirectText">Countdown naar de jobdag, deze zal plaatsvinden op 21 februari 2021.
+                    <div class="redirectText">... tot de jobdag op 21 februari 2022!
                     </div>
                     <div class="btn-container">
                         <i class="fas fa-angle-double-right"></i>
@@ -78,7 +88,8 @@
             <div id="intro-pupils">
                 <h2>Vers talent</h2>
                 <p>Vers uit de “coding” fabriek, presenteren wij met trots jullie mogelijke nieuwe aanwinsten!
-                    Graag presenteren zij ook hun CV een een eigen project.
+                    Graag presenteren zij ook hun CV een een eigen project. Klik hiervoor op een foto (project) of naam.
+                    (CV)
                 </p><br>
             </div>
             <div id="tv-carousel">
@@ -126,8 +137,8 @@
                     </a>
                 </div>
                 <div class="pupil">
-                    <a href="#" target="_blank" rel="noopener noreferrer"><img src="./img/semmi_pol.jpg"
-                            alt="Semmi_foto"></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer"><img src="./img/semmi_pol.jpg"alt="Semmi_foto">
+                    <a href="./pdf_cv/CV_Gorik_DHauwers.pdf" download="CV Gorik D'Hauwers"><div class="download"></div></a>
                 </div>
                 <div class="pupil">
                     <a href="#" target="_blank" rel="noopener noreferrer">
@@ -142,11 +153,16 @@
             </div>
         </section>
 
-        <section class="info-text scroll-section" id="opleiding">
-            <h2>Over de opleiding</h2>
-            <p>Over een periode van 4 maanden hebben wij de volgende codeertalen en tools benaderd en bestudeerd, dit
-                zowel op theoretisch en praktisch vlak. Als je over de icons hovert, zie je ook een korte uitleg omtrent
-                de taal of tool.</p>
+        <section class="info-text" id="opleiding">
+            <div class="over-opleiding">
+                <h2>Over de opleiding</h2>
+                <p>Over een periode van 4 maanden hebben wij de volgende codeertalen en tools benaderd en bestudeerd,
+                    dit
+                    zowel op theoretisch en praktisch vlak. Als je over de icons hovert, zie je ook een korte uitleg
+                    omtrent
+                    de taal of tool.</p>
+            </div>
+
             <div id="badgescontainer">
                 <h3>Toolbox</h3>
                 <div id="codeerbadge">
@@ -192,21 +208,21 @@
                             <p>is een platform en framework om single pages te maken met HTML en TypeScript</p>
                         </div>
                     </div>
-                    <div class="badge" id="html" onmouseover="showText(this)" onmouseout="hideText(this)">
+                    <div class="badge" id="sass" onmouseover="showText(this)" onmouseout="hideText(this)">
                         <img src="./img/sass.png" alt="sass">
                         <div class="uitleg">
                             <h6>SASS</h6>
                             <p>voor een extra sassy opmaak van de webpagina</p>
                         </div>
                     </div>
-                    <div class="badge" id="html" onmouseover="showText(this)" onmouseout="hideText(this)">
+                    <div class="badge" id="bs" onmouseover="showText(this)" onmouseout="hideText(this)">
                         <img src="./img/bootstrap.png" alt="bootstrap">
                         <div class="uitleg">
                             <h6>Bootstrap</h6>
                             <p>gebruiken we als handige front-end framework tool</p>
                         </div>
                     </div>
-                    <div class="badge" id="html" onmouseover="showText(this)" onmouseout="hideText(this)">
+                    <div class="badge" id="git" onmouseover="showText(this)" onmouseout="hideText(this)">
                         <img src="./img/github.png" alt="github">
                         <div class="uitleg">
                             <h6>Github</h6>
