@@ -89,24 +89,8 @@ function hideText(badge) {
     badge.children[1].style.visibility = "hidden"
 }
 
-<<<<<<< HEAD
-function carousel(element) {
-    console.log(element.nextElementSibling.children.length)
-    var countdownAan = () => {
-        nummer_carousel++
-        var aantal_pupils = element.nextElementSibling.children.length;
-        var orgineel = element;
-        var nieuw = element.nextElementSibling.children[nummer_carousel % aantal_pupils];
-        // orgineel.style.left = "50%";
-        // nieuw.style.right = "50%";
-        orgineel.innerHTML = nieuw.outerHTML
-    }
-    // var zetaan = 
-    setInterval(countdownAan, 3000);
-=======
 function loopHuidigeTest() {
     return nummer_carousel = (nummer_carousel + 1) % (pupil.length);
->>>>>>> 23835d79583cbb3d7aff599a63783a78ba6aa347
 }
 
 function carousel() {
