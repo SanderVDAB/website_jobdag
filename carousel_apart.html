@@ -8,6 +8,53 @@
 
    <link rel="stylesheet" href="./style.css">
    <style>
+        :root{
+            --breedte_tv: 100px
+            --breedte_carousel: 300px
+        }
+
+       /* #tv-carousel {
+           position: ;
+       } */
+
+       #pupil-carousel {
+           
+            position: relative;
+            /* left: 37.5%;
+            right: 37.5%; */
+            display: flex;
+            flex-direction: row;
+       }
+
+.intro{
+   animation-name: intro;
+   animation-duration: 1s;
+   /* animation-delay: 1s; */
+   animation-iteration-count: infinite;         
+}
+
+.outro{
+   animation-name: outro;
+   animation-duration: 1s;
+   /* animation-delay: 1s; */
+   animation-iteration-count: infinite;         
+}
+
+@keyframes intro {
+  0%   {left:30px;}
+  25%  {left:22.5px;}
+  50%  {left:15px;}
+  75%  {left:7.5px;}
+  100% {left:0px;}
+}
+
+@keyframes outro {
+  0%   {left:0px;}
+  25%  {left:-7.5px;}
+  50%  {left:-15px;}
+  75%  {left:-22.5px;}
+  100% {left:-30px;}
+}
 
 
 
@@ -20,11 +67,12 @@
       </div>
       <div id="pupils">
           <div class="pupil">
-              <a href="#" target="_blank" rel="noopener noreferrer"><img src="./img/ali_pol.jpg" alt="Ali_foto"><a
-                      href="https://wonderful-pebble-058846c03.1.azurestaticapps.net/" target="_blank"
-                      rel="noopener noreferrer">
+              <a target="_blank" rel="noopener noreferrer" onclick="geenWebsite()">
+                  <img src="./img/ali_pol.jpg" alt="Ali_foto">
+                  <a href="https://wonderful-pebble-058846c03.1.azurestaticapps.net/" target="_blank" rel="noopener noreferrer">
                       <div class="download"></div>
-                  </a></a>
+                  </a>
+              </a>
           </div>
           <div class="pupil">
               <a href="https://sandervdab.github.io/extra_oef/" target="_blank" rel="noopener noreferrer">
@@ -43,12 +91,12 @@
               </a>
           </div>
           <div class="pupil">
-              <a href="https://woutermathues.github.io/obsidianthievesproject/" target="_blank"
-                  rel="noopener noreferrer"><img src="./img/wouter_pol.jpg" alt="Wouter_foto"><a
-                      href="https://woutermathues.github.io/CVwoutermathuesresponsive/" target="_blank"
-                      rel="noopener noreferrer">
+              <a href="https://woutermathues.github.io/obsidianthievesproject/" target="_blank" rel="noopener noreferrer">
+                  <img src="./img/wouter_pol.jpg" alt="Wouter_foto">
+                  <a href="https://woutermathues.github.io/CVwoutermathuesresponsive/" target="_blank" rel="noopener noreferrer">
                       <div class="download"></div>
-                  </a></a>
+                  </a>
+              </a>
           </div>
 
           <div class="pupil">
@@ -60,8 +108,12 @@
               </a>
           </div>
           <div class="pupil">
-              <a href="#" target="_blank" rel="noopener noreferrer"><img src="./img/semmi_pol.jpg"alt="Semmi_foto">
-              <a href="./pdf_cv/CV_Gorik_DHauwers.pdf" download="CV Gorik D'Hauwers"><div class="download"></div></a>
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                  <img src="./img/semmi_pol.jpg"alt="Semmi_foto">
+                  <a href="./pdf_cv/CVSemmi2022.pdf" download="CV Semmi Ezaitourni">
+                      <div class="download"></div>
+                  </a>
+              </a>
           </div>
           <div class="pupil">
               <a href="#" target="_blank" rel="noopener noreferrer">
@@ -77,39 +129,61 @@
     var carousel_HTML = document.getElementById("pupil-carousel")
     var pupil = document.getElementsByClassName("pupil");
     var nummer_carousel = 0;
+    var carousel_duur = 4000;
+
+    function geenWebsite() {
+        alert("Work in progress!")
+    }
+
     function loopHuidigeTest() {
         return nummer_carousel = (nummer_carousel + 1) % (pupil.length);
     }
-
-    function makePupilRow(){
-        first = pupil[(nummer_carousel - 1 + pupil.length) % pupil.length].outerHTML
-        second = pupil[(nummer_carousel + pupil.length) % pupil.length].outerHTML
-        third = pupil[(nummer_carousel + 1 + pupil.length) % pupil.length].outerHTML
-        return `${first + second + third}` 
+    
+    for(var i = 0; i < 10; i++){
+        console.log(loopHuidigeTest())
     }
 
-    console.log(makePupilRow());
+    function maakPickArray(index) {
+        var arr_index = [];
+        for (var i = 0; i < pupil.length; i++){
+            arr_index.push(i);
+        }
+        return arr_index[index];
+    }
+
+    function makePupilRow(){
+        var middelste = pupil[loopHuidigeTest()];
+        var eerste = (middelste.previousElementSibling === null ? middelste.parentElement.children[6] : middelste.previousElementSibling).outerHTML;
+        var laatste = (middelste.nextElementSibling === null ? middelste.parentElement.children[0] : middelste.nextElementSibling).outerHTML;
+        middelste = middelste.outerHTML;
+        console.log(eerste, middelste, laatste);
+        return `${eerste}${middelste}${laatste}` 
+    }
+
+    console.log(maakPickArray(6), pupil.length);
       
     function carousel() {
         carousel_HTML.classList.add("outro");
         setTimeout(function () {
            carousel_HTML.classList.remove("outro");
-           carousel_HTML.innerHTML = pupil[loopHuidigeTest()].outerHTML;
-           // carousel_HTML.innerHTML = makePupilRow();
            carousel_HTML.classList.add("intro");
-        }, 1000)
+        }, (carousel_duur / 4))
         setTimeout(function () {
            carousel_HTML.classList.remove("intro");
-        }, 2000)
+        }, (carousel_duur / 2))
+        setTimeout(function () {            
+           carousel_HTML.innerHTML = makePupilRow();
+        }, carousel_duur)
     }      
       
     // function fixbreedte() {
     //     console.log(carousel_HTML.chlidren)
     // }
             
-    window.addEventListener("load", () => setInterval(carousel, 4000));
+    window.addEventListener("load", () => setInterval(carousel, carousel_duur));
     //   window.addEventListener("resize", fixbreedte());
 
+    
   </script>
 </body>
 </html>
